@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Notification } from '../../../domain/notification';
+import { DiscordSubscription } from '../../../domain/subscription';
 import { DiscordSubscriptionRepository } from '../../../repository/subscription';
 
 export class DiscordNotifyService {
@@ -10,9 +11,7 @@ export class DiscordNotifyService {
   }
 
   async send(notifications: Notification[]): Promise<void> {
-    const subscriptions = await this.repository.findAll();
-
-    console.log(`Send ${notifications.length} notifications to ${subscriptions.length} discord subscribers.`);
+    const subscriptions: DiscordSubscription[] = await this.repository.findAll();
 
     for (const subscription of subscriptions) {
       try {

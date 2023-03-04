@@ -2,6 +2,7 @@ import { validateOrReject } from 'class-validator';
 import { DiscordSubscription } from '../../domain/subscription';
 import { APIGatewayHandler } from '../../infrastructure/aws-lambda/api-gateway-handler';
 import { dataSource } from '../../infrastructure/typeorm/data-source';
+import { DiscordSubscriptionRepository } from '../../repository/subscription';
 import { AddDiscordSubscriptionInput } from './dto';
 
 export const handler = APIGatewayHandler(async (event) => {
@@ -12,7 +13,8 @@ export const handler = APIGatewayHandler(async (event) => {
 
   const subscription: DiscordSubscription = DiscordSubscription.create();
   subscription.webhookUrl = input.webhookUrl;
-  await subscription.save();
+  const repository: DiscordSubscriptionRepository = new DiscordSubscriptionRepository();
+  await repository.save(subscription);
 
   await dataSource.destroy();
 

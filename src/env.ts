@@ -6,6 +6,9 @@ export class Env {
   static SCHEDULE_TIME: number;
 
   @EnvKey()
+  static DISCORD_STATUS_NOTIFICATION_WEBHOOK_URL: string;
+
+  @EnvKey()
   static DATABASE_HOST: string;
 
   @EnvKey({ default: 'tech-news' })
