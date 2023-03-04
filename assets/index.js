@@ -1,4 +1,5 @@
 document.getElementById('discord-submit').addEventListener('click', () => {
+  document.getElementById('discord-webhook-url').disabled = true;
   document.getElementById('discord-submit').disabled = true;
   document.getElementById('discord-submit').innerText = '등록 중';
 
@@ -18,6 +19,7 @@ document.getElementById('discord-submit').addEventListener('click', () => {
     } else if (http.readyState === 4 && http.status !== 200) {
       document.getElementById('discord-submit').innerText = '등록';
       document.getElementById('discord-submit').disabled = false;
+      document.getElementById('discord-webhook-url').disabled = false;
       alert('문제가 발생했습니다. 잠시 후 다시 시도해주세요.');
     }
   };
