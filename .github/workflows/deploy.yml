@@ -42,3 +42,17 @@ jobs:
 
       - name: Execute
         run: yarn deploy
+
+      - name: 배포 성공 알림
+        if: ${{ success() }}
+        run: |
+          curl -X POST -H "Content-type: application/json" \
+          --data '{"content": null, "embeds": [{"description": "tech-news 배포 완료", "color": 65321}], "attachments": []}' \
+          ${{ secrets.DISCORD_DEPLOYMENT_NOTIFICATION_WEBHOOK }}
+
+      - name: 배포 실패 알림
+        if: ${{ failure() }}
+        run: |
+          curl -X POST -H "Content-type: application/json" \
+          --data '{"content": null, "embeds": [{"description": "tech-news 배포 실패", "color": 16711680}], "attachments": []}' \
+          ${{ secrets.DISCORD_DEPLOYMENT_NOTIFICATION_WEBHOOK }}
