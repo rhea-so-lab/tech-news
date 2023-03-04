@@ -49,9 +49,9 @@ provider:
     cors: true
 
 functions:
-  translate:
+  add-discord-subscription:
     handler: dist/usecase/add-discord-subscription/handler.handler
-    memorySize: 1024
+    memorySize: 512
     timeout: 5
     events:
       - httpApi:

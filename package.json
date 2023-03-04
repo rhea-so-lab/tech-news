@@ -8,10 +8,11 @@
   "private": true,
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc",
     "prerss": "yarn build",
-    "rss": "node dist/usecase/check/handler.js",
     "prestart": "yarn build",
+    "predeploy": "yarn build",
+    "build": "tsc",
+    "rss": "node dist/usecase/check/handler.js",
     "start": "serverless offline",
     "deploy": "serverless deploy --stage production",
     "undeploy": "serverless remove --stage production"
