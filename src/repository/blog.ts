@@ -3,6 +3,7 @@ import { Blog } from '../domain/blog';
 export class BlogRepository {
   async findAll(): Promise<Blog[]> {
     return [
+      // ▼ 기업 블로그
       new Blog('무신사(MUSINSA) 기술블로그', 'https://medium.com/feed/musinsa-tech'),
       new Blog('네이버 D2 기술블로그', 'https://d2.naver.com/d2.atom'),
       new Blog('마켓컬리 기술블로그', 'https://helloworld.kurly.com/feed.xml'),
@@ -21,9 +22,9 @@ export class BlogRepository {
       new Blog('쏘카(Socar) 기술블로그', 'https://tech.socarcorp.kr/feed'),
       new Blog('리디(RIDI) 기술블로그', 'https://www.ridicorp.com/feed'),
       new Blog('NHN Toast 기술블로그', 'https://meetup.toast.com/rss'),
-      new Blog('GeekNews - 개발/기술/스타트업 뉴스 서비스', 'https://news.hada.io/rss/news'),
-      new Blog('월간 개발자 뉴스레터 - 개발자스럽다', 'https://blog.gaerae.com/feeds/posts/default?alt=rss'),
-      new Blog('IT 관련 뉴스 제공 블로그 - 44BITS', 'https://www.44bits.io/ko/feed/all'),
+
+      // ▼ 개인 블로그
+      new Blog('향로 블로그', 'https://jojoldu.tistory.com/rss'),
     ];
   }
 }
