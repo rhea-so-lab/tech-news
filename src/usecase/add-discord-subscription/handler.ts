@@ -9,6 +9,8 @@ export const handler = APIGatewayHandler(async (event) => {
   const input: AddDiscordSubscriptionInput = new AddDiscordSubscriptionInput(JSON.parse(event.body ?? '{}'));
   await validateOrReject(input);
 
+  if (!input.webhookUrl.startsWith('https://discord.com/api/webhooks/')) throw new Error('Invalid webhook URL');
+
   await dataSource.initialize();
 
   const subscription: DiscordSubscription = DiscordSubscription.create();
