@@ -1,12 +1,12 @@
 process.env.TZ = 'Europe/London'; // RSS feed's pubDate is in GMT+0.
 
-import { Env } from './env';
-import { Feed, RSSParser } from './adapter/rss-parser';
-import { Blog } from './domain/blog';
-import { Notification } from './domain/notification';
-import { BlogRepository } from './repository/blog';
-import { NotifyService } from './usecase/check/service';
-import { dataSource } from './infrastructure/typeorm/data-source';
+import { Env } from '../../env';
+import { dataSource } from '../../infrastructure/typeorm/data-source';
+import { RSSParser, Feed } from '../../adapter/rss-parser';
+import { Blog } from '../../domain/blog';
+import { Notification } from '../../domain/notification';
+import { BlogRepository } from '../../repository/blog';
+import { NotifyService } from './service';
 
 const rss: RSSParser = new RSSParser();
 const repository: BlogRepository = new BlogRepository();

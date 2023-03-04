@@ -12,7 +12,7 @@ export class DiscordNotifyService {
   async send(notifications: Notification[]): Promise<void> {
     const subscriptions = await this.repository.findAll();
 
-    console.log(`Send ${notifications.length} notifications to ${subscriptions.length} subscribers. (Discord)`);
+    console.log(`Send ${notifications.length} notifications to ${subscriptions.length} discord subscribers.`);
 
     for (const subscription of subscriptions) {
       try {

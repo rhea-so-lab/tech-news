@@ -30,4 +30,4 @@ jobs:
           envkey_DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
 
       - name: Execute
-        run: yarn start
+        run: yarn rss
