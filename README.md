@@ -16,13 +16,31 @@
 
 ### Discord
 
+<details>
+
 1. 알림을 받고자 하는 서버의 채널을 엽니다.
+
 2. "채널 편집" (좌측 사이드바에서 채널 제목 끝의 ⚙ 클릭) 화면으로 갑니다.
+
+<img width="263" alt="image" src="https://user-images.githubusercontent.com/25793226/222929146-2614d51d-4d04-4010-97fb-b7ac198c1f60.png">
+
 3. "연동" 탭을 선택하고 "웹후크" 를 클릭합니다.
+
+<img width="898" alt="image" src="https://user-images.githubusercontent.com/25793226/222929167-7b240f82-dc36-4d42-98da-d401bfb1c185.png">
+
 4. "새 웹후크" 버튼을 눌러서 새로운 웹후크를 생성합니다.
-5. 원하는 이름을 설정하고, 채널이 맞는지 확인한 뒤에 "웹후크 URL 복사"버튼을 누릅니다.
-6. https://rhea-so-lab.github.io/tech-news/assets/ 에 접속합니다.
-7. 웹후크 URL을 붙혀넣고, 등록 버튼을 누릅니다.
+
+<img width="901" alt="image" src="https://user-images.githubusercontent.com/25793226/222929175-8bec0ab4-3739-455b-b540-061daf3ecacd.png">
+
+5. https://rhea-so-lab.github.io/tech-news/assets/ 에 접속합니다.
+
+6. 웹후크 URL을 붙혀넣고, 등록 버튼을 누릅니다.
+
+<img width="232" alt="image" src="https://user-images.githubusercontent.com/25793226/222929196-e5cddb59-a0dc-46df-a2db-512284fb6f7e.png">
+
+<img width="486" alt="image" src="https://user-images.githubusercontent.com/25793226/222929202-1d48328f-7f62-4460-8a3a-6792e4620b06.png">
+
+</details>
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
