@@ -1,28 +1,29 @@
-name: "Bug Report"
-description: "If something isn't working as expected"
+name: "버그 제보"
+description: "기능이 예상과 다르게 동작합니다!"
 labels: ["bug"]
 body:
   - type: textarea
     validations:
       required: true
     attributes:
-      label: "Current behavior"
-      description: "How the issue manifests?"
+      label: "현재 동작"
+      description: "현재 기능이 어떤 잘못된 동작을 하고 있는지 최대한 자세히 서술해주세요."
 
   - type: textarea
     validations:
       required: true
     attributes:
-      label: "Steps to reproduce"
-      description: "How the issue manifests?"
+      label: "재현 방법"
+      description: "어떻게 버그를 재현할 수 있는지 최대한 자세히 서술해주세요."
       placeholder: |
-        1. do something
-        2. do something
-        3. See error...
+        1. 언제
+        2. 무엇을
+        3. 어떻게 했더니
+        4. 이렇게 에러를 보았습니다...
 
   - type: textarea
     validations:
       required: true
     attributes:
-      label: "Expected behavior"
-      description: "A clear and concise description of what you expected to happened (or code)"
+      label: "기대 동작"
+      description: "버그가 없을 경우에 어떤게 동작해야 하는지 최대한 자세히 서술해주세요."
