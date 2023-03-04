@@ -45,6 +45,9 @@ provider:
   stage: ${opt:stage,'development'}
   logRetentionInDays: 1
 
+  httpApi:
+    cors: true
+
 functions:
   translate:
     handler: dist/usecase/add-discord-subscription/handler.handler
