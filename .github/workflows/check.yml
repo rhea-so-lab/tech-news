@@ -1,0 +1,33 @@
+name: Check RSS
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+
+jobs:
+  check-rss:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: check-rss
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 16.19.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.19.0'
+          cache: 'yarn'
+
+      - name: Create .env
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+          envkey_DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          envkey_DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+
+      - name: Execute
+        run: yarn start
