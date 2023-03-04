@@ -3,8 +3,8 @@
 엄선된(?) 기술 블로그들의 새 글 알림을 선호하는 SNS에서 받아보세요.
 
 <a href="#getting-started">Getting Started</a> •
-<a href="#built-with">Built With</a> •
 <a href="#roadmap">Roadmap</a> •
+<a href="#built-with">Built With</a> •
 <a href="#contributing">Contributing</a> •
 <a href="#license">License</a>
 
@@ -44,6 +44,21 @@
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
+## Roadmap
+
+### v1.0.1
+
+- [ ] Slack 알리미 추가
+- [ ] Webhook 등록 프론트엔드 디자인 추가
+- [ ] CONTRIBUTING.md 정리
+
+### v1.0.0
+
+- [x] RSS Reader 구현
+- [x] Discord 알리미 추가
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
 ## Built With
 
 이 프로젝트는 아래 기술들로 구현되었습니다.
@@ -57,21 +72,6 @@
 - [Axios](https://www.npmjs.com/package/axios) - 웹훅 호출할때 사용합니다.
 - [EnvSafe](https://www.npmjs.com/package/@creatrip/env-safe) - 환경변수를 불러올때 사용합니다.
 - [Class Validator](https://github.com/typestack/class-validator) - 유저의 웹 요청이 양식에 맞는지 검증할때 사용합니다.
-
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-## Roadmap
-
-### v1.0.1
-
-- [ ] Slack 알리미 추가
-- [ ] Webhook 등록 프론트엔드 디자인 추가
-- [ ] CONTRIBUTING.md 정리
-
-### v1.0.0
-
-- [x] RSS Reader 구현
-- [x] Discord 알리미 추가
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
