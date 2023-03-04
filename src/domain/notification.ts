@@ -1,13 +1,32 @@
-export class Notification {
-  title: string;
-  contentSnippet: string;
-  url: string;
-  createdAt: Date;
+import { Feed, FeedItem } from '../adapter/rss-parser';
 
-  constructor(title: string, contentSnippet: string, url: string, createdAt: Date) {
-    this.title = title;
-    this.contentSnippet = contentSnippet;
-    this.url = url;
-    this.createdAt = createdAt;
+export class Notification {
+  author!: string;
+  title!: string;
+  contentSnippet!: string;
+  url!: string;
+  createdAt!: Date;
+
+  private constructor() {}
+
+  static fromFeed(feed: Feed, scheduleTime: number): Notification[] {
+    if (!feed.title) return [];
+
+    const notifications: Notification[] = [];
+
+    for (const feedItem of feed.items) {
+      const { title, contentSnippet, link, pubDate } = feedItem as FeedItem;
+      if (!title || !contentSnippet || !link || !pubDate) continue;
+
+      const notification = new Notification();
+      notification.author = feed.title;
+      notification.title = title;
+      notification.contentSnippet = contentSnippet;
+      notification.url = link;
+      notification.createdAt = new Date(pubDate);
+      notifications.push(notification);
+    }
+
+    return notifications.filter((notification) => Date.now() - notification.createdAt.getTime() < scheduleTime);
   }
 }
