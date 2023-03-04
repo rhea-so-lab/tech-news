@@ -51,7 +51,7 @@ provider:
 functions:
   translate:
     handler: dist/usecase/add-discord-subscription/handler.handler
-    memorySize: 256
+    memorySize: 1024
     timeout: 5
     events:
       - httpApi:

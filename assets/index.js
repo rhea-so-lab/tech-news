@@ -13,9 +13,9 @@ document.getElementById('discord-submit').addEventListener('click', () => {
 
   http.onreadystatechange = () => {
     if (http.readyState === 4 && http.status === 200) {
-      document.getElementById('discord-submit').innerText = '등록이 완료되었습니다.';
+      document.getElementById('discord-submit').innerText = '등록이 완료되었습니다';
       alert('등록이 완료되었습니다.');
-    } else {
+    } else if (http.readyState === 4 && http.status !== 200) {
       document.getElementById('discord-submit').innerText = '등록';
       document.getElementById('discord-submit').disabled = false;
       alert('문제가 발생했습니다. 잠시 후 다시 시도해주세요.');
