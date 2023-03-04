@@ -9,7 +9,7 @@ export const dataSource = new DataSource({
   username: Env.DATABASE_USERNAME,
   password: Env.DATABASE_PASSWORD,
   database: Env.DATABASE_NAME,
-  synchronize: true,
+  synchronize: false,
   logging: false,
   entities: [DiscordSubscription],
 });

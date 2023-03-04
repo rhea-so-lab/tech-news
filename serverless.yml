@@ -1,0 +1,56 @@
+service: tech-news
+
+plugins:
+  - serverless-offline
+  - serverless-prune-plugin
+  - serverless-domain-manager
+  - serverless-apigateway-route-settings
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  stages:
+    - development
+    - production
+
+  serverless-offline:
+    useChildProcesses: true
+    httpPort: 4000
+
+  prune:
+    automatic: true
+    number: 1
+
+  domains:
+    development: dev-api.rhea-so.link
+    production: api.rhea-so.link
+
+  customDomain:
+    apiType: http
+    endpointType: REGIONAL
+    basePath: ${self:service}
+    domainName: ${self:custom.domains.${self:custom.stage}}
+    stage: ${self:custom.stage}
+    createRoute53Record: true
+    autoDomain: true
+
+  routeSettings:
+    burstLimit: 10
+    rateLimit: 20
+    detailedMetricsEnabled: false
+
+provider:
+  name: aws
+  region: ap-northeast-2
+  runtime: nodejs16.x
+  stage: ${opt:stage,'development'}
+  logRetentionInDays: 1
+
+functions:
+  translate:
+    handler: dist/usecase/add-discord-subscription/handler.handler
+    memorySize: 256
+    timeout: 5
+    events:
+      - httpApi:
+          path: /add-discord-subscription
+          method: post
