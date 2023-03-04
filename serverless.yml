@@ -52,7 +52,7 @@ functions:
   add-discord-subscription:
     handler: dist/usecase/add-discord-subscription/handler.handler
     memorySize: 512
-    timeout: 5
+    timeout: 10
     events:
       - httpApi:
           path: /add-discord-subscription
