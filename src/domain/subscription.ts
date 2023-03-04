@@ -1,7 +1,8 @@
-export class DiscordSubscription {
-  webhookUrl: string;
+import { Column, Entity } from 'typeorm';
+import { BaseEntity } from '../infrastructure/typeorm/entity';
 
-  constructor(webhookUrl: string) {
-    this.webhookUrl = webhookUrl;
-  }
+@Entity()
+export class DiscordSubscription extends BaseEntity {
+  @Column({ type: 'varchar', length: 255 })
+  webhookUrl!: string;
 }

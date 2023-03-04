@@ -12,25 +12,31 @@ export class DiscordNotifyService {
   async send(notifications: Notification[]): Promise<void> {
     const subscriptions = await this.repository.findAll();
 
-    for (const subscription of subscriptions) {
-      for (const notification of notifications) {
-        const { title, contentSnippet, url, author } = notification;
+    console.log(`Send ${notifications.length} notifications to ${subscriptions.length} subscribers. (Discord)`);
 
-        await axios.post(subscription.webhookUrl, {
-          content: null,
-          embeds: [
-            {
-              color: 4229077,
-              title: title,
-              description: contentSnippet,
-              url: url,
-              footer: {
-                text: `From. ${author}`,
+    for (const subscription of subscriptions) {
+      try {
+        for (const notification of notifications) {
+          const { title, contentSnippet, url, author } = notification;
+
+          await axios.post(subscription.webhookUrl, {
+            content: null,
+            embeds: [
+              {
+                color: 4229077,
+                title: title,
+                description: contentSnippet,
+                url: url,
+                footer: {
+                  text: `From. ${author}`,
+                },
               },
-            },
-          ],
-          attachments: [],
-        });
+            ],
+            attachments: [],
+          });
+        }
+      } catch (error) {
+        await this.repository.remove(subscription);
       }
     }
   }

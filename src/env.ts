@@ -6,7 +6,13 @@ export class Env {
   static SCHEDULE_TIME: number;
 
   @EnvKey()
-  static DATABASE_URL: string;
+  static DATABASE_HOST: string;
+
+  @EnvKey({ default: 'tech-news' })
+  static DATABASE_NAME: string;
+
+  @EnvKey()
+  static DATABASE_USERNAME: string;
 
   @EnvKey()
   static DATABASE_PASSWORD: string;

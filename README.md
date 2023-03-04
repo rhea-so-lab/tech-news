@@ -31,7 +31,7 @@
 
 - [GitHub Action](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) - 지정한 시간마다 소스코드를 실행할때 사용합니다.
 - [Node.js](https://nodejs.org/ko/) - NPM에서 프로젝트와 관련된 모듈을 가져와 빨리 개발하려고, 자바스크립트 런타임을 사용합니다.
-- [MongoDB](https://www.mongodb.com/) - 알리미 수신자 정보를 저장하기 위해, MongoDB 무료 Plan을 사용합니다.
+- [Neon](https://neon.tech/) - 알리미 수신자 정보를 저장하기 위해, Neon (Serverless Postgres) 무료 Plan을 사용합니다.
 - [TypeORM](https://typeorm.io/) - DB 쿼리를 짜기 귀찮아서 사용합니다.
 - [RSS Parser](https://www.npmjs.com/package/rss-parser) - RSS를 POJO로 파싱할때 사용합니다.
 - [Axios](https://www.npmjs.com/package/axios) - 웹훅 호출할때 사용합니다.
