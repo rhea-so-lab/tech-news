@@ -6,8 +6,6 @@ export class Notification {
   url!: string;
   createdAt!: Date;
 
-  private constructor() {}
-
   static fromFeed(feed: Feed, scheduleTime: number): Notification[] {
     if (!feed.title) return [];
 
