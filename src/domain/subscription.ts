@@ -6,3 +6,9 @@ export class DiscordSubscription extends BaseEntity {
   @Column({ type: 'varchar', length: 255 })
   webhookUrl!: string;
 }
+
+@Entity()
+export class SlackSubscription extends BaseEntity {
+  @Column({ type: 'varchar', length: 255 })
+  webhookUrl!: string;
+}

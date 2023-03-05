@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { DiscordSubscription } from '../../domain/subscription';
+import { DiscordSubscription, SlackSubscription } from '../../domain/subscription';
 import { Env } from '../../env';
 
 export const dataSource = new DataSource({
@@ -11,5 +11,5 @@ export const dataSource = new DataSource({
   database: Env.DATABASE_NAME,
   synchronize: false,
   logging: false,
-  entities: [DiscordSubscription],
+  entities: [DiscordSubscription, SlackSubscription],
 });
