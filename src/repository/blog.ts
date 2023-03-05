@@ -23,6 +23,11 @@ export class BlogRepository {
       new Blog('리디(RIDI) 기술블로그', 'https://www.ridicorp.com/feed'),
       new Blog('NHN Toast 기술블로그', 'https://meetup.toast.com/rss'),
 
+      // ▼ 커뮤니티
+      new Blog('GeekNews - 개발/기술/스타트업 뉴스 서비스', 'https://news.hada.io/rss/news'),
+      new Blog('월간 개발자 뉴스레터 - 개발자스럽다', 'https://blog.gaerae.com/feeds/posts/default?alt=rss'),
+      new Blog('IT 관련 뉴스 제공 블로그 - 44BITS', 'https://www.44bits.io/ko/feed/all'),
+
       // ▼ 개인 블로그
       new Blog('향로 블로그', 'https://jojoldu.tistory.com/rss'),
     ];
