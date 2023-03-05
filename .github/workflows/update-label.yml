@@ -1,0 +1,15 @@
+name: Update label
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  update-label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TimonVS/pr-labeler-action@v3
+        with:
+          configuration-path: .github/config/pr-labeler.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

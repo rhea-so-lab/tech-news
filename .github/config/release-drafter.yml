@@ -1,0 +1,40 @@
+commitish: main
+filter-by-commitish: true
+
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+
+categories:
+  - title: '버그 수정'
+    label: 'bug'
+
+  - title: '신규 기능 추가'
+    label: 'feature'
+
+  - title: '기존 기능 개선'
+    label: 'enhancement'
+
+  - title: '리팩토링'
+    label: 'refactoring'
+
+  - title: '문서 작업'
+    label: 'documentation'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
+
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: minor
+
+template: |
+  ## 기타
+  $CHANGES
