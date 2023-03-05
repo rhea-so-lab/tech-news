@@ -1,6 +1,8 @@
 # Tech News
 
-엄선된(?) 기술 블로그들의 새 글 알림을 선호하는 SNS에서 받아보세요.
+<img src="https://user-images.githubusercontent.com/25793226/222950236-d79c5ce9-0e0a-4caf-b028-132bed58de2a.jpg" width=200 />
+
+엄선된(?) 기술 블로그 새 글 알림을 선호하는 SNS에서 받아보세요.
 
 <a href="#getting-started">Getting Started</a> •
 <a href="#roadmap">Roadmap</a> •
