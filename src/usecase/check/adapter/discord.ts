@@ -16,7 +16,7 @@ export class DiscordNotifyService {
     for (const subscription of subscriptions) {
       try {
         for (const notification of notifications) {
-          const { title, contentSnippet, url, author } = notification;
+          const { title, url, author } = notification;
 
           await axios.post(subscription.webhookUrl, {
             content: null,
@@ -24,7 +24,6 @@ export class DiscordNotifyService {
               {
                 color: 4229077,
                 title: title,
-                description: contentSnippet,
                 url: url,
                 footer: {
                   text: `From. ${author}`,
